@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stocksba-stock
+  namespace: stocksba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stocksba-stock
+  template:
+    metadata:
+      labels:
+        app: stocksba-stock
+    spec:
+      containers:
+        - name: stocksba-stock
+          image: registry.cn-shanghai.aliyuncs.com/yuanbing/stocksba-stock:{version}
+          ports:
+            - name: http-port
+              containerPort: 9995
+          env:
+            - name: spring_profiles_active
+              value: k8s
+          volumeMounts:
+          - name: stocksba-stock-persistent-storage
+            mountPath: /upload-dir
+      volumes:
+      - name: stocksba-stock-persistent-storage
+        persistentVolumeClaim:
+          claimName: stocksba-stock-uploaddir-pv-claim             
+      imagePullSecrets:
+        - name: stocksba
