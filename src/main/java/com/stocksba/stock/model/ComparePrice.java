@@ -23,6 +23,22 @@ public class ComparePrice {
 	public void setStockdate(String stockdate) {
 		this.stockdate = stockdate;
 	}
+	public ComparePrice(String companycode, Double price, String stockdate) {
+		super();
+		this.companycode = companycode;
+		this.price = price;
+		this.stockdate = stockdate;
+	}
+	public ComparePrice() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "ComparePrice [companycode=" + companycode + ", price=" + price + ", stockdate=" + stockdate + "]";
+	}
+	
+	
 	
 	
 

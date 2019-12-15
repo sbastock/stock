@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.stocksba.stock.property.FileStorageProperties",
+      "sourceType": "com.stocksba.stock.property.FileStorageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.upload-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.stocksba.stock.property.FileStorageProperties"
+    }
+  ],
+  "hints": []
+}
